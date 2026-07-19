@@ -1,4 +1,4 @@
-# Aashish Kumar — Web Developer Portfolio
+# Aashish Kumar — Portfolio
 
 ## 🎓 About Me
 I am a recent Bachelor of Computer Applications (BCA) graduate who specializes in building responsive, user-focused web applications. I enjoy bridging clean frontend interfaces with solid backend logic. Comfortable across multiple programming languages, I am currently exploring AI/ML and Big Data tooling alongside my web development work.
