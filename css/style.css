@@ -401,6 +401,17 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-top: 1px solid var(--border);
 }
 
+.cert-image {
+  max-width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-top: 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
 /* ===================== Projects ===================== */
 .projects-grid {
   display: grid;
@@ -419,6 +430,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 .project-card:hover {
   border-color: var(--accent);
   transform: translateY(-3px);
+}
+
+.project-links {
+  margin-top: 12px;
+}
+.project-link {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+.project-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }
 
 .project-top {

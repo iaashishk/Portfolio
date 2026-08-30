@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
@@ -37,12 +37,12 @@
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">View projects</a>
         <a href="#contact" class="btn btn-ghost">Get in touch</a>
-        <a href="resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+        <a href="/documents/resume.pdf" class="btn btn-ghost" download>Download Resume</a>
       </div>
     </div>
     <div class="hero-photo">
       <div class="photo-frame">
-        <img src="aashish photo.jpg" alt="Aashish Kumar" id="profileImg">
+        <img src="/images/passportpic.jpg" alt="Aashish Kumar" id="profileImg">
         <div class="avatar-fallback" id="avatarFallback">AK</div>
       </div>
       <div class="photo-tag">AASHISH KUMAR</div>
@@ -68,12 +68,12 @@
           <span class="fact-label">Links</span>
           <span class="fact-value" style="display: flex; flex-direction: column; gap: 8px;">
           <a href="https://github.com/iaashishk" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
-          <img src="github.png" alt="GitHub" width="18" height="18">
+          <img src="/images/github.png" alt="GitHub" width="18" height="18">
            github.com/iaashishk
           </a>
     
          <a href="https://www.linkedin.com/in/aashish-k-b53778261/" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
-           <img src="linkedin.png" alt="LinkedIn" width="18" height="18">
+           <img src="/images/linkedin.png" alt="LinkedIn" width="18" height="18">
            Aashish Kumar
          </a>
          </span>
@@ -105,20 +105,19 @@
         <span class="tag">Bootstrap</span>
         <span class="tag">Tailwind CSS</span>
         <span class="tag">JavaScript (ES6+)</span>
+        <span class="tag">React.js</span>
         <span class="tag">DOM Manipulation</span>
         <span class="tag">Responsive Design</span>
       </div>
     </div>
     
     <div class="skill-group">
-      <h3>Backend &amp; Frameworks <em>(Learning)</em></h3>
+      <h3>Backend &amp; Frameworks</h3>
       <div class="tags">
-        <span class="tag">React.js</span>
         <span class="tag">Node.js</span>
         <span class="tag">Express.js</span>
         <span class="tag">MySQL</span>
         <span class="tag">MongoDB</span>
-        <span class="tag">.NET</span>
       </div>
     </div>
 
@@ -160,6 +159,7 @@
         <span class="tag">VS Code</span>
         <span class="tag">npm</span>
         <span class="tag">Linux</span>
+        <span class="tag">MS Excel</span>
       </div>
     </div>
   </div>
@@ -197,14 +197,26 @@
 <section id="certifications" class="section alt">
   <p class="eyebrow">Certifications</p>
   <h2 class="section-title">What I've achieved</h2>
+  
   <div class="timeline-item">
     <div class="timeline-head">
       <h3>Software Engineering</h3>
       <span class="timeline-date">2025</span>
     </div>
     <p class="timeline-company">NPTEL (IIT / MHRD)</p>
+    <img src="/images/Software-Engineering.jpg" alt="Software Engineering Certificate" class="cert-image">
+  </div>
+  
+  <div class="timeline-item">
+    <div class="timeline-head">
+      <h3>Advanced Excel</h3>
+      <span class="timeline-date">2026</span>
+    </div>
+    <p class="timeline-company">Amity University Online</p>
+    <img src="/images/EXCEL-CERTIFICATE.jpg" alt="Advanced Excel Certificate" class="cert-image">
   </div>
 </section>
+
 <section id="projects" class="section alt">
   <p class="eyebrow">Projects</p>
   <h2 class="section-title">Things I've built</h2>
@@ -212,11 +224,26 @@
 
     <div class="project-card">
       <div class="project-top">
+        <h3>Food-Lover - Restaurant & Food Ordering Landing Page</h3>
+        <span class="project-year">2026</span>
+      </div>
+      <div class="tags"><span class="tag">HTML5</span><span class="tag">Bootstrap 5</span><span class="tag">JavaScript</span></div>
+      <p>Built a responsive restaurant/food landing page with HTML5, Bootstrap 5, and vanilla JavaScript, including dark mode, mobile navigation, and scroll-triggered animations[cite: 1]. Implemented a live countdown timer for promotional offers to drive urgency and engagement[cite: 1].</p>
+      <div class="project-links">
+        <a href="https://iaashishk.github.io/Food-Lover/" target="_blank" class="project-link">Live Preview ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
         <h3>E-Commerce Website</h3>
         <span class="project-year">2026</span>
       </div>
       <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-      <p>A fully functional storefront front end with product listing, cart management, and a checkout flow. Product filtering and cart updates run in real time through DOM manipulation — no external frameworks.</p>
+      <p>Built a fully functional e-commerce frontend with product listing, cart management, and checkout flow using HTML, CSS, and JavaScript[cite: 1]. Implemented dynamic product filtering and real-time cart updates via DOM manipulation without any external frameworks[cite: 1].</p>
+      <div class="project-links">
+        <a href="https://iaashishk.github.io/ecommerce-website/" target="_blank" class="project-link">Live Preview ↗</a>
+      </div>
     </div>
 
     <div class="project-card">
@@ -225,7 +252,10 @@
         <span class="project-year">2026</span>
       </div>
       <div class="tags"><span class="tag">JavaScript</span><span class="tag">REST API</span></div>
-      <p>Fetches live conditions from a public weather API and shows real-time temperature, humidity, and forecast for any searched city, with error handling for bad input and network failures.</p>
+      <p>Developed a weather application that fetches live data from a public REST API and displays real-time temperature, humidity, and conditions for any searched city[cite: 1]. Handled asynchronous API calls using the JavaScript Fetch API, with error handling for invalid inputs and network failures[cite: 1].</p>
+      <div class="project-links">
+        <a href="https://iaashishk.github.io/weather-app/" target="_blank" class="project-link">Live Preview ↗</a>
+      </div>
     </div>
 
     <div class="project-card">
@@ -234,34 +264,22 @@
         <span class="project-year">2026</span>
       </div>
       <div class="tags"><span class="tag">Vanilla JS</span><span class="tag">localStorage</span></div>
-      <p>A personal finance tracker with add/delete transactions, live balance calculation, and income/expense categorization. Data persists across sessions via localStorage — no backend required.</p>
+      <p>Built a personal finance tracker with add/delete transaction features, live balance calculation, and income/expense categorization using vanilla JavaScript[cite: 1]. Used localStorage to persist data across browser sessions, retaining user data without a backend[cite: 1].</p>
+      <div class="project-links">
+        <a href="https://iaashishk.github.io/expense-tracker/" target="_blank" class="project-link">Live Preview ↗</a>
+      </div>
     </div>
 
     <div class="project-card">
       <div class="project-top">
-        <h3>ShriJi Agro Products Website</h3>
+        <h3>ShriJi Agro Product Website</h3>
         <span class="project-year">2025</span>
       </div>
       <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Flexbox</span><span class="tag">JavaScript</span></div>
-      <p>A responsive, multi-page business site built with a fellow developer under mentorship, giving an agricultural company its first real digital presence.</p>
-    </div>
-
-    <div class="project-card">
-      <div class="project-top">
-        <h3>Big Data Virtualization Setup</h3>
-        <span class="project-year">2025</span>
+      <p>Built as a 2-person team project under the mentorship of Pankaj Arora, delivering a fully functional business website[cite: 1]. Applied HTML, CSS, CSS Flexbox, and JavaScript to create a responsive, multi-page site showcasing products and services[cite: 1].</p>
+      <div class="project-links">
+        <a href="https://github.com/iaashishk/SHRIJI-AGRO-PRODUCT-WEBSITE-PROJECT" target="_blank" class="project-link">View on Github ↗</a>
       </div>
-      <div class="tags"><span class="tag">Cloudera</span><span class="tag">HDFS</span><span class="tag">MapReduce</span></div>
-      <p>Configured and optimized a Cloudera QuickStart VM for data warehousing concepts, including HDFS command execution and MapReduce workflows.</p>
-    </div>
-
-    <div class="project-card">
-      <div class="project-top">
-        <h3>Console-Based Calculator</h3>
-        <span class="project-year">2025</span>
-      </div>
-      <div class="tags"><span class="tag">C#</span></div>
-      <p>A purely user-input-driven calculator that processes complex mathematical operations without relying on a graphical keypad interface.</p>
     </div>
 
   </div>
@@ -296,13 +314,13 @@
   <h2 class="section-title">Let's build something.</h2>
   <p class="contact-sub">Open to internships, junior developer roles, and freelance front-end work.</p>
   <div class="contact-grid">
-    <a href="mailto:iaashishk@gmail.com" class="contact-item">
+    <a href="mailto:iaashishkumar04@gmail.com" class="contact-item">
       <span class="fact-label">Email</span>
-      <span class="fact-value">iaashishk@gmail.com</span>
+      <span class="fact-value">iaashishkumar04@gmail.com</span>
     </a>
     <a href="tel:+918750096400" class="contact-item">
       <span class="fact-label">Phone</span>
-      <span class="fact-value">+91-8750096400</span>
+      <span class="fact-value">+91-9205588640</span>
     </a>
     <a href="https://github.com/iaashishk" target="_blank" rel="noopener" class="contact-item">
       <span class="fact-label">GitHub</span>
@@ -314,8 +332,8 @@
     </a>
   </div>
   <div class="contact-cta" style="display: flex; gap: 16px; flex-wrap: wrap;">
-    <a href="mailto:iaashishk@gmail.com" class="btn btn-primary">Email me</a>
-    <a href="resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+    <a href="mailto:iaashishkumar04@gmail.com" class="btn btn-primary">Email me</a>
+    <a href="/documents/resume.pdf" class="btn btn-ghost" download>Download Resume</a>
   </div>
 </section>
 
@@ -331,6 +349,6 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="/js/script.js"></script>
 </body>
 </html>
