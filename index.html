@@ -1,136 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cyber">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aashish Kumar — Portfolio</title>
+<title>Aashish Kumar — Software Engineer &amp; Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Aashish Kumar - MCA student in AI & ML, Frontend Developer Intern at Webority Technologies, building responsive 3D web apps with React, Node.js, and modern technologies.">
+<meta name="theme-color" content="#0a0e14">
+<script>document.documentElement.classList.add('has-js');</script>
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aashish Kumar — Software Engineer & Full-Stack Developer">
+<meta property="og:description" content="MCA (AI & ML) scholar and Frontend Developer Intern at Webority Technologies, building responsive 3D web apps with React, Node.js, and modern technologies.">
+<meta property="og:image" content="images/passportpic.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Aashish Kumar — Software Engineer & Full-Stack Developer">
+<meta name="twitter:description" content="MCA (AI & ML) scholar and Frontend Developer Intern at Webority Technologies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav class="navbar">
-  <a href="#home" class="logo">AK<span class="accent-dot">.</span></a>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links" id="navLinks">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#recommendations">Recommendations</a>
-    <a href="#contact" class="nav-cta">Contact</a>
+<div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+<div class="custom-cursor" id="customCursor" aria-hidden="true">
+  <div class="cursor-dot" id="customCursorDot"></div>
+  <span class="cursor-label" id="customCursorLabel"></span>
+</div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo">AK<span class="accent-dot">.</span></a>
+    
+    <div class="theme-picker" aria-label="Select accent theme">
+      <button class="theme-btn active" data-theme="cyber" title="Cyber Neon" aria-label="Cyber Neon theme">
+        <span class="theme-swatch theme-cyber"></span>
+      </button>
+      <button class="theme-btn" data-theme="gold" title="Gold Luxury" aria-label="Gold Luxury theme">
+        <span class="theme-swatch theme-gold"></span>
+      </button>
+      <button class="theme-btn" data-theme="emerald" title="Emerald Matrix" aria-label="Emerald Matrix theme">
+        <span class="theme-swatch theme-emerald"></span>
+      </button>
+      <button class="theme-btn" data-theme="sunset" title="Sunset Flame" aria-label="Sunset Flame theme">
+        <span class="theme-swatch theme-sunset"></span>
+      </button>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="nav-links" id="navLinks">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#recommendations" class="nav-link">Recommendations</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
   </div>
 </nav>
 
 <header id="home" class="hero">
+  <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-backdrop" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-text">
-    
-      <h1>Hi, I'm<br><span class="accent-text">Aashish Kumar</span></h1>
-      <p class="hero-role">MCA Student & Aspiring Software Engineer</p>
-      <p class="hero-desc">BCA graduate now pursuing an MCA in AI & ML. I build responsive, user-focused web apps and I'm comfortable moving from clean interfaces into the backend logic and data structures behind them. Currently working as a Frontend Developer Intern at Webority Technologies, while deepening my stack with React.js, Node.js, and MongoDB.</p>
-      <div class="status-chip"><span class="dot" aria-hidden="true"></span> open to opportunities</div>
+      <div class="status-chip">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Open to Opportunities &amp; Engineering Roles</span>
+      </div>
+      <h1 class="hero-title">Hi, I'm<br><span class="accent-gradient-text cyber-shimmer">Aashish Kumar</span></h1>
+      <p class="hero-role">
+        <span id="roleRotator">MCA (AI &amp; ML) Scholar</span><span class="role-cursor" aria-hidden="true">|</span>
+      </p>
+      <p class="hero-desc">
+        BCA graduate (CGPA 8.31) pursuing MCA in Artificial Intelligence &amp; Machine Learning. Frontend Developer Intern at Webority Technologies. Crafting interactive 3D interfaces, high-performance web systems, and full-stack architectures with React, Node.js, Express, and MongoDB.
+      </p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View projects</a>
-        <a href="#contact" class="btn btn-ghost">Get in touch</a>
-        <a href="documents/resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+        <a href="#projects" class="btn btn-primary">
+          <span>View Projects</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+        <a href="documents/resume.pdf" class="btn btn-ghost" download>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Resume</span>
+        </a>
+        <button class="btn btn-ghost copy-btn" data-copy="iaashishkumar04@gmail.com" aria-label="Copy email address">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span>Copy Email</span>
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card spotlight-card" data-tilt>
+          <span class="stat-num tilt-pop-2">2+</span>
+          <span class="stat-label tilt-pop-1">Internships</span>
+        </div>
+        <div class="stat-card spotlight-card" data-tilt>
+          <span class="stat-num tilt-pop-2">5+</span>
+          <span class="stat-label tilt-pop-1">Featured Apps</span>
+        </div>
+        <div class="stat-card spotlight-card" data-tilt>
+          <span class="stat-num tilt-pop-2">8.31</span>
+          <span class="stat-label tilt-pop-1">BCA CGPA</span>
+        </div>
+        <div class="stat-card spotlight-card" data-tilt>
+          <span class="stat-num tilt-pop-2">15+</span>
+          <span class="stat-label tilt-pop-1">Core Tech</span>
+        </div>
       </div>
     </div>
     <div class="hero-photo">
-      <div class="photo-frame">
-        <img src="images/passportpic.jpg" alt="Aashish Kumar" id="profileImg">
-        <div class="avatar-fallback" id="avatarFallback">AK</div>
+      <div class="photo-container spotlight-card" data-tilt>
+        <div class="photo-glow" aria-hidden="true"></div>
+        <div class="photo-frame tilt-pop-1">
+          <img src="images/passportpic.jpg" alt="Aashish Kumar" id="profileImg" loading="eager">
+          <div class="avatar-fallback" id="avatarFallback">AK</div>
+        </div>
+        <div class="photo-tag tilt-pop-3">AASHISH KUMAR</div>
       </div>
-      <div class="photo-tag">AASHISH KUMAR</div>
     </div>
   </div>
 </header>
 
 <section id="about" class="section">
-  <p class="eyebrow">About</p>
+  <p class="eyebrow">Interactive Overview</p>
+  <h2 class="section-title">Bridging intuitive interfaces with solid backend systems.</h2>
   <div class="about-grid">
-    <p class="about-lead">A recent Computer Applications graduate (BCA) and current MCA (AI & Machine Learning) student, specializing in building responsive, user-focused web applications. Currently working as a Frontend Developer Intern at Webority Technologies, I bridge clean frontend interfaces with solid backend logic. I am comfortable across JavaScript, Python, and Java, and am actively expanding my full-stack capabilities with React, Node.js, and MongoDB while exploring AI and Big Data tooling.</p>
-    <div class="facts">
-      <div class="fact">
-        <span class="fact-label">Location</span>
-        <span class="fact-value">Faridabad, Haryana, IN</span>
+    <div class="about-main">
+      <p class="about-lead">
+        I am a Computer Applications graduate (BCA, CGPA 8.31/10) currently pursuing an MCA in Artificial Intelligence &amp; Machine Learning at Amity University Online. Working as a Frontend Developer Intern at Webority Technologies, I specialize in building responsive, scalable, and high-performance digital products.
+      </p>
+      <p class="about-text">
+        My technical foundation covers data structures, algorithms, object-oriented programming, and modern full-stack workflows. Whether developing modular React interfaces, architecting RESTful services with Node.js and Express, or querying relational and document databases like MySQL and MongoDB, I prioritize clean architecture, readability, and exceptional user experiences.
+      </p>
+      <div class="about-badges">
+        <span class="badge">Clean Architecture</span>
+        <span class="badge">3D &amp; Motion UI</span>
+        <span class="badge">Responsive UI/UX</span>
+        <span class="badge">Performance Optimized</span>
+        <span class="badge">Continuous Learner</span>
       </div>
-      <div class="fact">
-        <span class="fact-label">Education</span>
-        <div class="fact-value">M.C.A · 2026 – Present</div>
-        <div class="fact-value">B.C.A (CGPA 8.3/10) · 2023–2026</div>
-      </div>
-      <div class="fact">
-          <span class="fact-label">Links</span>
-          <span class="fact-value" style="display: flex; flex-direction: column; gap: 8px;">
-          <a href="https://github.com/iaashishk" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
-          <img src="images/github.png" alt="GitHub" width="18" height="18">
-           github.com/iaashishk
-          </a>
-    
-         <a href="https://www.linkedin.com/in/aashish-k-b53778261/" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
-           <img src="images/linkedin.png" alt="LinkedIn" width="18" height="18">
-           Aashish Kumar
-         </a>
-         </span>
+
+      <div class="terminal-card spotlight-card" data-tilt>
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+          </div>
+          <span class="terminal-title">guest@aashish-portfolio: ~ (zsh)</span>
+          <span class="terminal-badge">LIVE CLI</span>
         </div>
+        <div class="terminal-body" id="terminalOutput">
+          <div class="term-line term-intro">Welcome to Aashish Kumar's interactive developer terminal.</div>
+          <div class="term-line term-sub">Type a command or click a quick shortcut:</div>
+          <div class="term-quick-cmds">
+            <button class="cmd-chip" data-cmd="help">help</button>
+            <button class="cmd-chip" data-cmd="skills">skills</button>
+            <button class="cmd-chip" data-cmd="projects">projects</button>
+            <button class="cmd-chip" data-cmd="experience">experience</button>
+            <button class="cmd-chip" data-cmd="contact">contact</button>
+            <button class="cmd-chip" data-cmd="clear">clear</button>
+          </div>
+        </div>
+        <form id="terminalForm" class="terminal-input-row" onsubmit="return false;">
+          <span class="term-prompt">guest@ak:~$</span>
+          <input type="text" id="terminalInput" placeholder="type 'help' and press Enter..." autocomplete="off" spellcheck="false">
+        </form>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact spotlight-card" data-tilt>
+        <span class="fact-label">Location</span>
+        <div class="fact-value fact-with-icon tilt-pop-1">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Faridabad, Haryana, India</span>
+        </div>
+      </div>
+      <div class="fact spotlight-card" data-tilt>
+        <span class="fact-label">Current Role</span>
+        <div class="fact-value fact-with-icon tilt-pop-1">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <span>Frontend Developer Intern at Webority Technologies</span>
+        </div>
+      </div>
+      <div class="fact spotlight-card" data-tilt>
+        <span class="fact-label">Education</span>
+        <div class="fact-value tilt-pop-1">M.C.A (AI &amp; ML) · Amity University (2026 – Present)</div>
+        <div class="fact-value tilt-pop-1">B.C.A (CGPA 8.31/10) · J.C. Bose UST, YMCA (2023 – 2026)</div>
+      </div>
+      <div class="fact spotlight-card" data-tilt>
+        <span class="fact-label">Direct Channels</span>
+        <div class="fact-socials tilt-pop-1">
+          <a href="https://github.com/iaashishk" target="_blank" rel="noopener" class="social-link" aria-label="GitHub Profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>github.com/iaashishk</span>
+          </a>
+          <a href="https://www.linkedin.com/in/aashish-k-b53778261/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn Profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.92 0 1.66-.74 1.66-1.66s-.74-1.66-1.66-1.66c-.92 0-1.66.74-1.66 1.66s.74 1.66 1.66 1.66m1.37 9.74v-8.37H5.09v8.37h2.74z"/></svg>
+            <span>linkedin.com/in/aashish-k</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 <section id="skills" class="section alt">
   <p class="eyebrow">Skills &amp; Technologies</p>
-  <h2 class="section-title">What I work with</h2>
-  
+  <h2 class="section-title">Technical capabilities &amp; engineering stack</h2>
+
+  <div class="marquee-wrapper scroll-reveal" aria-label="Core Engineering Technologies Ticker">
+    <div class="marquee-row">
+      <div class="marquee-track marquee-track-left">
+        <div class="marquee-chip"><span class="chip-icon">⚛</span> React.js</div>
+        <div class="marquee-chip"><span class="chip-icon">⚡</span> Next.js</div>
+        <div class="marquee-chip"><span class="chip-icon">📜</span> JavaScript (ES6+)</div>
+        <div class="marquee-chip"><span class="chip-icon">🔷</span> TypeScript</div>
+        <div class="marquee-chip"><span class="chip-icon">🌐</span> HTML5 &amp; DOM</div>
+        <div class="marquee-chip"><span class="chip-icon">🎨</span> Tailwind CSS</div>
+        <div class="marquee-chip"><span class="chip-icon">📐</span> CSS3 &amp; 3D Transforms</div>
+        <div class="marquee-chip"><span class="chip-icon">🟢</span> Node.js</div>
+        <div class="marquee-chip"><span class="chip-icon">🚀</span> Express.js</div>
+        <div class="marquee-chip"><span class="chip-icon">⚛</span> React.js</div>
+        <div class="marquee-chip"><span class="chip-icon">⚡</span> Next.js</div>
+        <div class="marquee-chip"><span class="chip-icon">📜</span> JavaScript (ES6+)</div>
+        <div class="marquee-chip"><span class="chip-icon">🔷</span> TypeScript</div>
+        <div class="marquee-chip"><span class="chip-icon">🌐</span> HTML5 &amp; DOM</div>
+        <div class="marquee-chip"><span class="chip-icon">🎨</span> Tailwind CSS</div>
+        <div class="marquee-chip"><span class="chip-icon">📐</span> CSS3 &amp; 3D Transforms</div>
+        <div class="marquee-chip"><span class="chip-icon">🟢</span> Node.js</div>
+        <div class="marquee-chip"><span class="chip-icon">🚀</span> Express.js</div>
+      </div>
+    </div>
+    <div class="marquee-row">
+      <div class="marquee-track marquee-track-right">
+        <div class="marquee-chip"><span class="chip-icon">🍃</span> MongoDB</div>
+        <div class="marquee-chip"><span class="chip-icon">🐬</span> MySQL</div>
+        <div class="marquee-chip"><span class="chip-icon">🐍</span> Python</div>
+        <div class="marquee-chip"><span class="chip-icon">⚙️</span> C++</div>
+        <div class="marquee-chip"><span class="chip-icon">🐘</span> Hadoop / Big Data</div>
+        <div class="marquee-chip"><span class="chip-icon">🐙</span> Git &amp; GitHub</div>
+        <div class="marquee-chip"><span class="chip-icon">🔌</span> RESTful APIs</div>
+        <div class="marquee-chip"><span class="chip-icon">💻</span> Linux CLI</div>
+        <div class="marquee-chip"><span class="chip-icon">🧠</span> AI &amp; Machine Learning</div>
+        <div class="marquee-chip"><span class="chip-icon">🍃</span> MongoDB</div>
+        <div class="marquee-chip"><span class="chip-icon">🐬</span> MySQL</div>
+        <div class="marquee-chip"><span class="chip-icon">🐍</span> Python</div>
+        <div class="marquee-chip"><span class="chip-icon">⚙️</span> C++</div>
+        <div class="marquee-chip"><span class="chip-icon">🐘</span> Hadoop / Big Data</div>
+        <div class="marquee-chip"><span class="chip-icon">🐙</span> Git &amp; GitHub</div>
+        <div class="marquee-chip"><span class="chip-icon">🔌</span> RESTful APIs</div>
+        <div class="marquee-chip"><span class="chip-icon">💻</span> Linux CLI</div>
+        <div class="marquee-chip"><span class="chip-icon">🧠</span> AI &amp; Machine Learning</div>
+      </div>
+    </div>
+  </div>
+
   <div class="skills-groups">
-    <div class="skill-group">
-      <h3>Languages</h3>
-      <div class="tags">
+    <div class="skill-group spotlight-card" data-tilt>
+      <div class="skill-group-head tilt-pop-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        <h3>Languages</h3>
+      </div>
+      <div class="tags tilt-pop-1">
         <span class="tag">C++</span>
         <span class="tag">Python</span>
         <span class="tag">Java</span>
         <span class="tag">C#</span>
         <span class="tag">SQL</span>
+        <span class="tag highlight">JavaScript (ES6+)</span>
       </div>
     </div>
-    
-    <div class="skill-group">
-      <h3>Frontend</h3>
-      <div class="tags">
+    <div class="skill-group spotlight-card" data-tilt>
+      <div class="skill-group-head tilt-pop-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        <h3>Frontend Development</h3>
+      </div>
+      <div class="tags tilt-pop-1">
+        <span class="tag highlight">React.js</span>
         <span class="tag">HTML5</span>
         <span class="tag">CSS3</span>
-        <span class="tag">Bootstrap</span>
-        <span class="tag">Tailwind CSS</span>
-        <span class="tag">JavaScript (ES6+)</span>
-        <span class="tag">React.js</span>
+        <span class="tag highlight">Tailwind CSS</span>
+        <span class="tag">Bootstrap 5</span>
+        <span class="tag">CSS Flexbox &amp; Grid</span>
         <span class="tag">DOM Manipulation</span>
-        <span class="tag">Responsive Design</span>
+        <span class="tag">Responsive 3D UI</span>
       </div>
     </div>
-    
-    <div class="skill-group">
-      <h3>Backend &amp; Frameworks</h3>
-      <div class="tags">
-        <span class="tag">Node.js</span>
-        <span class="tag">Express.js</span>
+    <div class="skill-group spotlight-card" data-tilt>
+      <div class="skill-group-head tilt-pop-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+        <h3>Backend &amp; Databases</h3>
+      </div>
+      <div class="tags tilt-pop-1">
+        <span class="tag highlight">Node.js</span>
+        <span class="tag highlight">Express.js</span>
+        <span class="tag highlight">MongoDB</span>
         <span class="tag">MySQL</span>
-        <span class="tag">MongoDB</span>
+        <span class="tag">RESTful APIs</span>
       </div>
     </div>
-
-    <div class="skill-group">
-      <h3>Exploring</h3>
-      <div class="tags">
-        <span class="tag">AI / ML</span>
+    <div class="skill-group spotlight-card" data-tilt>
+      <div class="skill-group-head tilt-pop-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+        <h3>AI &amp; Big Data</h3>
       </div>
-    </div>
-
-    <div class="skill-group">
-      <h3>Big Data &amp; Analytics</h3>
-      <div class="tags">
+      <div class="tags tilt-pop-1">
+        <span class="tag highlight">AI / Machine Learning</span>
         <span class="tag">Hadoop</span>
         <span class="tag">MapReduce</span>
         <span class="tag">HDFS</span>
@@ -138,216 +322,550 @@
         <span class="tag">Cloudera</span>
       </div>
     </div>
-    
-    <div class="skill-group">
-      <h3>Foundations</h3>
-      <div class="tags">
+    <div class="skill-group spotlight-card" data-tilt>
+      <div class="skill-group-head tilt-pop-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <h3>CS Foundations</h3>
+      </div>
+      <div class="tags tilt-pop-1">
         <span class="tag">Data Structures</span>
-        <span class="tag">OOP</span>
+        <span class="tag">Algorithms</span>
+        <span class="tag">OOP Concepts</span>
         <span class="tag">DBMS</span>
         <span class="tag">Operating Systems</span>
         <span class="tag">Computer Networks</span>
-        <span class="tag">Software Engineering</span>
       </div>
     </div>
-    
-    <div class="skill-group">
-      <h3>Tools &amp; Environments</h3>
-      <div class="tags">
-        <span class="tag">Git</span>
-        <span class="tag">GitHub</span>
+    <div class="skill-group spotlight-card" data-tilt>
+      <div class="skill-group-head tilt-pop-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        <h3>Tools &amp; Workflow</h3>
+      </div>
+      <div class="tags tilt-pop-1">
+        <span class="tag highlight">Git</span>
+        <span class="tag highlight">GitHub</span>
         <span class="tag">VS Code</span>
         <span class="tag">npm</span>
-        <span class="tag">Linux</span>
-        <span class="tag">MS Excel</span>
+        <span class="tag">Linux CLI</span>
+        <span class="tag">MS Excel (Advanced)</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="experience" class="section">
-  <p class="eyebrow">Experience</p>
-  <h2 class="section-title">Where I've worked</h2>
-  <div class="timeline-item">
-    <div class="timeline-head">
-      <h3>Frontend Developer Intern</h3>
-      <span class="timeline-date">Aug 2026 – Present</span>
+<section id="experience" class="section xp-stack-section">
+  <div class="xp-mark-wrap" aria-hidden="true">
+    <div class="xp-mark-clip">
+      <div class="xp-mark-track">
+        <span class="xp-mark-run">EXPERIENCE · IMPACT · ENGINEERING · SHIPPING · </span>
+        <span class="xp-mark-run">EXPERIENCE · IMPACT · ENGINEERING · SHIPPING · </span>
+      </div>
     </div>
-    <p class="timeline-company">Webority Technologies</p>
-    <ul class="timeline-list">
-      <li>Working as a Frontend Developer Intern, building and maintaining responsive web interfaces.</li>
-      <li>Collaborating with the team on real client projects, applying HTML, CSS, and JavaScript best practices.</li>
-    </ul>
   </div>
-  <div class="timeline-item">
-    <div class="timeline-head">
-      <h3>Frontend Developer Intern</h3>
-      <span class="timeline-date">Jun – Jul 2025</span>
+  <p class="eyebrow">Experience</p>
+  <h2 class="section-title">Where I've contributed</h2>
+  
+  <div class="xp-stack-deck">
+    <div class="xp-card-slot" style="z-index: 1;">
+      <div class="xp-card xp-card-rot-1 spotlight-card" data-tilt>
+        <div class="timeline-head tilt-pop-2">
+          <div>
+            <span class="xp-badge">PRESENT ROLE</span>
+            <h3>Frontend Developer Intern</h3>
+            <p class="timeline-company">Webority Technologies</p>
+          </div>
+          <span class="timeline-date">Aug 2026 – Present</span>
+        </div>
+        <ul class="timeline-list tilt-pop-1">
+          <li>Architecting and maintaining modular, cross-device web interfaces for production client applications.</li>
+          <li>Collaborating with cross-functional engineering teams to implement clean HTML5, CSS3, and JavaScript best practices.</li>
+          <li>Enhancing web performance, accessibility metrics, and cross-browser consistency across mobile, tablet, and desktop views.</li>
+        </ul>
+        <div class="timeline-tech tilt-pop-1">
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">HTML5 / CSS3</span>
+          <span class="tech-pill">Responsive Design</span>
+          <span class="tech-pill">UI/UX</span>
+        </div>
+      </div>
     </div>
-    <p class="timeline-company">ShriJi Agro Products Pvt. Ltd.</p>
-    <ul class="timeline-list">
-      <li>Developed a responsive company website to showcase products, services, and company details to prospective customers.</li>
-      <li>Built clean, mobile-friendly layouts with HTML, CSS, and Flexbox, keeping display consistent across screen sizes.</li>
-      <li>Implemented interactive JavaScript elements to improve usability and engagement.</li>
-      <li>Worked alongside a fellow developer and a mentor to plan features, review code, and meet deadlines.</li>
-    </ul>
+
+    <div class="xp-card-slot" style="z-index: 2;">
+      <div class="xp-card xp-card-rot-2 spotlight-card" data-tilt>
+        <div class="timeline-head tilt-pop-2">
+          <div>
+            <span class="xp-badge">COMPLETED</span>
+            <h3>Frontend Developer Intern</h3>
+            <p class="timeline-company">ShriJi Agro Products Pvt. Ltd.</p>
+          </div>
+          <span class="timeline-date">Jun 2025 – Jul 2025</span>
+        </div>
+        <ul class="timeline-list tilt-pop-1">
+          <li>Engineered a comprehensive, multi-page business website to present corporate services, catalogue products, and customer inquiry pathways.</li>
+          <li>Implemented clean flexbox layouts and responsive styling, ensuring uniform layout stability across varying viewport widths.</li>
+          <li>Integrated interactive vanilla JavaScript mechanisms to streamline navigation flows and boost visitor engagement.</li>
+          <li>Worked alongside team developers and leadership to manage version control, conduct code reviews, and meet delivery milestones.</li>
+        </ul>
+        <div class="timeline-tech tilt-pop-1">
+          <span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS Flexbox</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">Git / GitHub</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-card-slot" style="z-index: 3;">
+      <div class="xp-card xp-card-rot-3 spotlight-card" data-tilt>
+        <div class="timeline-head tilt-pop-2">
+          <div>
+            <span class="xp-badge">ACADEMIC &amp; RESEARCH</span>
+            <h3>MCA in AI &amp; Machine Learning</h3>
+            <p class="timeline-company">Amity University Online · Prior: BCA, YMCA UST (8.31 CGPA)</p>
+          </div>
+          <span class="timeline-date">2024 – Present</span>
+        </div>
+        <ul class="timeline-list tilt-pop-1">
+          <li>Deepening expertise in Machine Learning, Distributed Big Data Systems, Software Engineering, and Advanced Cloud Architecture.</li>
+          <li>Graduated BCA from J.C. Bose UST, YMCA with 8.31 CGPA, establishing mastery in Data Structures, Algorithms, and OOP.</li>
+          <li>Building open-source developer tooling and shipping performant 3D full-stack applications.</li>
+        </ul>
+        <div class="timeline-tech tilt-pop-1">
+          <span class="tech-pill">Machine Learning</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Data Structures</span>
+          <span class="tech-pill">Full-Stack Architecture</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="certifications" class="section alt">
   <p class="eyebrow">Certifications</p>
-  <h2 class="section-title">What I've achieved</h2>
-  
-  <div class="timeline-item">
-    <div class="timeline-head">
-      <h3>Software Engineering</h3>
-      <span class="timeline-date">2025</span>
+  <h2 class="section-title">Verified credentials &amp; achievements</h2>
+  <div class="certs-grid">
+    <div class="cert-card spotlight-card" data-tilt>
+      <div class="cert-image-wrap tilt-pop-1" data-cert-src="images/Software-Engineering.jpg" data-cert-title="Software Engineering — NPTEL (IIT / MHRD)">
+        <img src="images/Software-Engineering.jpg" alt="Software Engineering Certificate" loading="lazy">
+        <div class="cert-overlay">
+          <span class="cert-zoom-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            <span>Click to Preview</span>
+          </span>
+        </div>
+      </div>
+      <div class="cert-body tilt-pop-2">
+        <div class="cert-meta">
+          <h3>Software Engineering</h3>
+          <span class="cert-year">2025</span>
+        </div>
+        <p class="cert-issuer">NPTEL (IIT / MHRD)</p>
+        <p class="cert-desc">Rigorous coursework in software development lifecycle, design patterns, testing methodologies, and architectural modeling.</p>
+      </div>
     </div>
-    <p class="timeline-company">NPTEL (IIT / MHRD)</p>
-    <img src="images/Software-Engineering.jpg" alt="Software Engineering Certificate" class="cert-image">
-  </div>
-  
-  <div class="timeline-item">
-    <div class="timeline-head">
-      <h3>Advanced Excel</h3>
-      <span class="timeline-date">2026</span>
+
+    <div class="cert-card spotlight-card" data-tilt>
+      <div class="cert-image-wrap tilt-pop-1" data-cert-src="images/EXCEL-CERTIFICATE.jpg" data-cert-title="Advanced Excel — Amity University Online">
+        <img src="images/EXCEL-CERTIFICATE.jpg" alt="Advanced Excel Certificate" loading="lazy">
+        <div class="cert-overlay">
+          <span class="cert-zoom-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            <span>Click to Preview</span>
+          </span>
+        </div>
+      </div>
+      <div class="cert-body tilt-pop-2">
+        <div class="cert-meta">
+          <h3>Advanced Excel</h3>
+          <span class="cert-year">2026</span>
+        </div>
+        <p class="cert-issuer">Amity University Online</p>
+        <p class="cert-desc">Data analysis, pivot structures, advanced mathematical lookup functions, conditional aggregation, and dashboard modeling.</p>
+      </div>
     </div>
-    <p class="timeline-company">Amity University Online</p>
-    <img src="images/EXCEL-CERTIFICATE.jpg" alt="Advanced Excel Certificate" class="cert-image">
   </div>
 </section>
 
-<section id="projects" class="section alt">
-  <p class="eyebrow">Projects</p>
-  <h2 class="section-title">Things I've built</h2>
-  <div class="projects-grid">
+<section id="projects" class="section projects-section">
+  <div class="aurora-mesh" aria-hidden="true"></div>
+  <p class="eyebrow">Portfolio</p>
+  <h2 class="section-title">Featured engineering projects</h2>
 
-    <div class="project-card">
-      <div class="project-top">
-        <h3>Food-Lover - Restaurant & Food Ordering Landing Page</h3>
-        <span class="project-year">2026</span>
-      </div>
-      <div class="tags"><span class="tag">HTML5</span><span class="tag">Bootstrap 5</span><span class="tag">JavaScript</span></div>
-      <p>Built a responsive restaurant/food landing page with HTML5, Bootstrap 5, and vanilla JavaScript, including dark mode, mobile navigation, and scroll-triggered animations[cite: 1]. Implemented a live countdown timer for promotional offers to drive urgency and engagement[cite: 1].</p>
-      <div class="project-links">
-        <a href="https://iaashishk.github.io/Food-Lover/" target="_blank" class="project-link">Live Preview ↗</a>
+  <div class="project-filter-bar">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="frontend">Frontend</button>
+    <button class="filter-btn" data-filter="vanilla">Vanilla JS</button>
+    <button class="filter-btn" data-filter="api">API / Full-Stack</button>
+  </div>
+
+  <div class="proj-slider-wrap">
+    <div class="proj-intro-panel scroll-reveal">
+      <p class="eyebrow">Works</p>
+      <h2 class="proj-heading">Featured<br>Projects</h2>
+      <div class="proj-scroll-indicator" aria-hidden="true">
+        <div class="proj-indicator-bar">
+          <div class="proj-indicator-fill"></div>
+        </div>
+        <span>Scroll ↔</span>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-top">
-        <h3>E-Commerce Website</h3>
+    <div class="proj-viewport" id="projViewport">
+      <div class="proj-track" id="projectsGrid">
+        <article class="project-card proj-card spotlight-card" data-category="frontend vanilla" data-tilt>
+      <div class="project-header-meta tilt-pop-1">
+        <span class="project-num">01</span>
+        <span class="meta-sep">/</span>
+        <span class="project-cat">Frontend · Vanilla JS</span>
+        <span class="project-status">Live</span>
+      </div>
+      <div class="project-top tilt-pop-2">
+        <div>
+          <span class="project-badge">Landing Page</span>
+          <h3>Food-Lover Restaurant Platform</h3>
+        </div>
         <span class="project-year">2026</span>
       </div>
-      <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-      <p>Built a fully functional e-commerce frontend with product listing, cart management, and checkout flow using HTML, CSS, and JavaScript[cite: 1]. Implemented dynamic product filtering and real-time cart updates via DOM manipulation without any external frameworks[cite: 1].</p>
-      <div class="project-links">
-        <a href="https://iaashishk.github.io/ecommerce-website/" target="_blank" class="project-link">Live Preview ↗</a>
+      <p class="project-desc tilt-pop-1">
+        A modern, interactive restaurant landing page and food discovery interface featuring dynamic dark mode, scroll-triggered animations, interactive menus, and an urgency-driven live promotional countdown timer.
+      </p>
+      <div class="tags tilt-pop-1">
+        <span class="tag">HTML5</span>
+        <span class="tag">Bootstrap 5</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">CSS3</span>
       </div>
-    </div>
+      <div class="project-links tilt-pop-2">
+        <a href="https://iaashishk.github.io/Food-Lover/" target="_blank" rel="noopener" class="project-btn project-btn-primary">
+          <span>Live Demo</span>
+          <span class="travel-arrow" aria-hidden="true">
+            <span class="travel-arrow-glyph">↗</span>
+            <span class="travel-arrow-glyph">↗</span>
+          </span>
+        </a>
+        <a href="https://github.com/iaashishk/Food-Lover" target="_blank" rel="noopener" class="project-btn project-btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>Code</span>
+        </a>
+      </div>
+    </article>
 
-    <div class="project-card">
-      <div class="project-top">
-        <h3>Weather App</h3>
+    <article class="project-card proj-card spotlight-card" data-category="frontend vanilla" data-tilt>
+      <div class="project-header-meta tilt-pop-1">
+        <span class="project-num">02</span>
+        <span class="meta-sep">/</span>
+        <span class="project-cat">Full-Stack · State Flow</span>
+        <span class="project-status">Live</span>
+      </div>
+      <div class="project-top tilt-pop-2">
+        <div>
+          <span class="project-badge">Web Application</span>
+          <h3>E-Commerce Storefront</h3>
+        </div>
         <span class="project-year">2026</span>
       </div>
-      <div class="tags"><span class="tag">JavaScript</span><span class="tag">REST API</span></div>
-      <p>Developed a weather application that fetches live data from a public REST API and displays real-time temperature, humidity, and conditions for any searched city[cite: 1]. Handled asynchronous API calls using the JavaScript Fetch API, with error handling for invalid inputs and network failures[cite: 1].</p>
-      <div class="project-links">
-        <a href="https://iaashishk.github.io/weather-app/" target="_blank" class="project-link">Live Preview ↗</a>
+      <p class="project-desc tilt-pop-1">
+        A complete e-commerce customer journey featuring responsive product grids, dynamic multi-attribute category filtering, cart addition and removal, subtotal calculation, and checkout validation with vanilla DOM manipulation.
+      </p>
+      <div class="tags tilt-pop-1">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag highlight">JavaScript (ES6+)</span>
+        <span class="tag">State Flow</span>
       </div>
-    </div>
+      <div class="project-links tilt-pop-2">
+        <a href="https://iaashishk.github.io/ecommerce-website/" target="_blank" rel="noopener" class="project-btn project-btn-primary">
+          <span>Live Demo</span>
+          <span class="travel-arrow" aria-hidden="true">
+            <span class="travel-arrow-glyph">↗</span>
+            <span class="travel-arrow-glyph">↗</span>
+          </span>
+        </a>
+        <a href="https://github.com/iaashishk/ecommerce-website" target="_blank" rel="noopener" class="project-btn project-btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>Code</span>
+        </a>
+      </div>
+    </article>
 
-    <div class="project-card">
-      <div class="project-top">
-        <h3>Expense Tracker</h3>
+    <article class="project-card proj-card spotlight-card" data-category="api vanilla" data-tilt>
+      <div class="project-header-meta tilt-pop-1">
+        <span class="project-num">03</span>
+        <span class="meta-sep">/</span>
+        <span class="project-cat">API Integration · Async JS</span>
+        <span class="project-status">Live</span>
+      </div>
+      <div class="project-top tilt-pop-2">
+        <div>
+          <span class="project-badge">API Integration</span>
+          <h3>Live Weather Application</h3>
+        </div>
         <span class="project-year">2026</span>
       </div>
-      <div class="tags"><span class="tag">Vanilla JS</span><span class="tag">localStorage</span></div>
-      <p>Built a personal finance tracker with add/delete transaction features, live balance calculation, and income/expense categorization using vanilla JavaScript[cite: 1]. Used localStorage to persist data across browser sessions, retaining user data without a backend[cite: 1].</p>
-      <div class="project-links">
-        <a href="https://iaashishk.github.io/expense-tracker/" target="_blank" class="project-link">Live Preview ↗</a>
+      <p class="project-desc tilt-pop-1">
+        A real-time meteorological forecast application querying public REST APIs. Processes asynchronous fetch promises with resilient error handling for invalid locations, network outages, and visual weather icon mapping.
+      </p>
+      <div class="tags tilt-pop-1">
+        <span class="tag highlight">JavaScript (Async/Await)</span>
+        <span class="tag highlight">REST API</span>
+        <span class="tag">JSON Parsing</span>
+        <span class="tag">CSS3</span>
       </div>
-    </div>
+      <div class="project-links tilt-pop-2">
+        <a href="https://iaashishk.github.io/weather-app/" target="_blank" rel="noopener" class="project-btn project-btn-primary">
+          <span>Live Demo</span>
+          <span class="travel-arrow" aria-hidden="true">
+            <span class="travel-arrow-glyph">↗</span>
+            <span class="travel-arrow-glyph">↗</span>
+          </span>
+        </a>
+        <a href="https://github.com/iaashishk/weather-app" target="_blank" rel="noopener" class="project-btn project-btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>Code</span>
+        </a>
+      </div>
+    </article>
 
-    <div class="project-card">
-      <div class="project-top">
-        <h3>ShriJi Agro Product Website</h3>
+    <article class="project-card proj-card spotlight-card" data-category="vanilla" data-tilt>
+      <div class="project-header-meta tilt-pop-1">
+        <span class="project-num">04</span>
+        <span class="meta-sep">/</span>
+        <span class="project-cat">Client-Side · LocalStorage</span>
+        <span class="project-status">Live</span>
+      </div>
+      <div class="project-top tilt-pop-2">
+        <div>
+          <span class="project-badge">Productivity</span>
+          <h3>Personal Expense Tracker</h3>
+        </div>
+        <span class="project-year">2026</span>
+      </div>
+      <p class="project-desc tilt-pop-1">
+        A client-side finance manager supporting real-time transaction logging, dynamic net balance computation, categorized expenditure filtering, and data persistence using browser localStorage without external backends.
+      </p>
+      <div class="tags tilt-pop-1">
+        <span class="tag">Vanilla JS</span>
+        <span class="tag highlight">localStorage API</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">Form Validation</span>
+      </div>
+      <div class="project-links tilt-pop-2">
+        <a href="https://iaashishk.github.io/expense-tracker/" target="_blank" rel="noopener" class="project-btn project-btn-primary">
+          <span>Live Demo</span>
+          <span class="travel-arrow" aria-hidden="true">
+            <span class="travel-arrow-glyph">↗</span>
+            <span class="travel-arrow-glyph">↗</span>
+          </span>
+        </a>
+        <a href="https://github.com/iaashishk/expense-tracker" target="_blank" rel="noopener" class="project-btn project-btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>Code</span>
+        </a>
+      </div>
+    </article>
+
+    <article class="project-card proj-card spotlight-card" data-category="frontend" data-tilt>
+      <div class="project-header-meta tilt-pop-1">
+        <span class="project-num">05</span>
+        <span class="meta-sep">/</span>
+        <span class="project-cat">Commercial · Production</span>
+        <span class="project-status">Live</span>
+      </div>
+      <div class="project-top tilt-pop-2">
+        <div>
+          <span class="project-badge">Commercial</span>
+          <h3>ShriJi Agro Corporate Portal</h3>
+        </div>
         <span class="project-year">2025</span>
       </div>
-      <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Flexbox</span><span class="tag">JavaScript</span></div>
-      <p>Built as a 2-person team project under the mentorship of Pankaj Arora, delivering a fully functional business website[cite: 1]. Applied HTML, CSS, CSS Flexbox, and JavaScript to create a responsive, multi-page site showcasing products and services[cite: 1].</p>
-      <div class="project-links">
-        <a href="https://github.com/iaashishk/SHRIJI-AGRO-PRODUCT-WEBSITE-PROJECT" target="_blank" class="project-link">View on Github ↗</a>
+      <p class="project-desc tilt-pop-1">
+        End-to-end multi-page commercial portal created for ShriJi Agro Products. Designed with mobile-responsive flexbox architectures, interactive product catalogues, inquiry lead capture, and modular CSS systems.
+      </p>
+      <div class="tags tilt-pop-1">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS Flexbox</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag highlight">UI Architecture</span>
+      </div>
+      <div class="project-links tilt-pop-2">
+        <a href="https://github.com/iaashishk/SHRIJI-AGRO-PRODUCT-WEBSITE-PROJECT" target="_blank" rel="noopener" class="project-btn project-btn-primary">
+          <span>GitHub Repository</span>
+          <span class="travel-arrow" aria-hidden="true">
+            <span class="travel-arrow-glyph">↗</span>
+            <span class="travel-arrow-glyph">↗</span>
+          </span>
+        </a>
+      </div>
+    </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-foot scroll-reveal">
+    <div class="proj-nav-btns">
+      <button type="button" id="projPrevBtn" class="proj-nav-btn" aria-label="Previous project">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button type="button" id="projNextBtn" class="proj-nav-btn" aria-label="Next project">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+    <div class="proj-progress-track">
+      <div class="proj-progress-fill" id="projProgressFill"></div>
+    </div>
+    <div class="proj-counter" id="projCounter">01 / 05</div>
+  </div>
+</section>
+
+<section id="recommendations" class="section alt">
+  <p class="eyebrow">Recommendations &amp; Feedback</p>
+  <h2 class="section-title">What colleagues &amp; mentors say</h2>
+  <div class="rec-carousel-wrap">
+    <div class="rec-carousel-viewport">
+      <div id="all_recommendations" class="recommendations-track"></div>
+    </div>
+    <div class="rec-carousel-controls">
+      <button type="button" id="recPrevBtn" class="rec-nav-btn" aria-label="Previous recommendation">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <div class="rec-dots" id="recDots" aria-label="Recommendation pagination"></div>
+      <button type="button" id="recNextBtn" class="rec-nav-btn" aria-label="Next recommendation">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="add-recommendation-card spotlight-card" data-tilt>
+    <div class="add-rec-header tilt-pop-2">
+      <h3>Leave a Recommendation</h3>
+      <p>Have we collaborated on a project or worked together? Share your feedback below.</p>
+    </div>
+    <form id="recommendationForm" class="add-recommendation-box tilt-pop-1" onsubmit="return false;">
+      <div class="form-row">
+        <input type="text" id="rec_author" placeholder="Your Name (e.g. Mentor / Colleague)" required>
+        <input type="text" id="rec_role" placeholder="Your Role / Organization">
+      </div>
+      <textarea id="new_recommendation" placeholder="Write your recommendation or feedback here..." rows="4" required></textarea>
+      <button type="submit" id="recommend_btn" class="btn btn-primary">
+        <span>Submit Recommendation</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="section contact-section">
+  <p class="eyebrow">Contact</p>
+  <h2 class="section-title">Let's build something together.</h2>
+  <p class="contact-sub">Available for software engineering roles, frontend development internships, and collaborative web projects.</p>
+
+  <div class="contact-grid">
+    <div class="contact-card spotlight-card" data-tilt>
+      <div class="contact-card-icon tilt-pop-2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      </div>
+      <div class="contact-card-content tilt-pop-1">
+        <span class="fact-label">Email</span>
+        <a href="mailto:iaashishkumar04@gmail.com" class="contact-value">iaashishkumar04@gmail.com</a>
+      </div>
+      <button class="icon-copy-btn copy-btn tilt-pop-2" data-copy="iaashishkumar04@gmail.com" aria-label="Copy email">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      </button>
+    </div>
+
+    <div class="contact-card spotlight-card" data-tilt>
+      <div class="contact-card-icon tilt-pop-2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      </div>
+      <div class="contact-card-content tilt-pop-1">
+        <span class="fact-label">Phone</span>
+        <a href="tel:+919205588640" class="contact-value">+91-9205588640</a>
+      </div>
+      <button class="icon-copy-btn copy-btn tilt-pop-2" data-copy="+919205588640" aria-label="Copy phone number">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      </button>
+    </div>
+
+    <div class="contact-card spotlight-card" data-tilt>
+      <div class="contact-card-icon tilt-pop-2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      </div>
+      <div class="contact-card-content tilt-pop-1">
+        <span class="fact-label">GitHub</span>
+        <a href="https://github.com/iaashishk" target="_blank" rel="noopener" class="contact-value">github.com/iaashishk</a>
       </div>
     </div>
 
-  </div>
-</section>
-
-<section id="recommendations" class="section">
-  <p class="eyebrow">Recommendations</p>
-  <h2 class="section-title">What people say</h2>
-  <div id="all_recommendations" class="recommendations-list">
-    <div class="recommendation">
-      <span class="quote-mark">&#8220;</span>
-      <p>An exceptionally dedicated developer who brings both technical proficiency and a strong work ethic to every project. Delivered outstanding results during their internship.</p>
-    </div>
-    <div class="recommendation">
-      <span class="quote-mark">&#8220;</span>
-      <p>Their ability to quickly grasp complex concepts like Hadoop ecosystems and apply them practically is highly impressive. A fantastic problem solver.</p>
-    </div>
-    <div class="recommendation">
-      <span class="quote-mark">&#8220;</span>
-      <p>Consistently produces clean, efficient code. Their approach to building user interfaces is methodical and always prioritizes the end-user experience.</p>
+    <div class="contact-card spotlight-card" data-tilt>
+      <div class="contact-card-icon tilt-pop-2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.92 0 1.66-.74 1.66-1.66s-.74-1.66-1.66-1.66c-.92 0-1.66.74-1.66 1.66s.74 1.66 1.66 1.66m1.37 9.74v-8.37H5.09v8.37h2.74z"/></svg>
+      </div>
+      <div class="contact-card-content tilt-pop-1">
+        <span class="fact-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/aashish-k-b53778261/" target="_blank" rel="noopener" class="contact-value">linkedin.com/in/aashish-k</a>
+      </div>
     </div>
   </div>
 
-  <div class="add-recommendation-box">
-    <textarea id="new_recommendation" placeholder="Leave a recommendation here..."></textarea>
-    <button id="recommend_btn">Submit</button>
+  <div class="plus-marks scroll-reveal" aria-hidden="true">
+    <span>+</span><span>+</span><span>+</span>
   </div>
-</section>
 
-<section id="contact" class="section alt contact-section">
-  <p class="eyebrow">Contact</p>
-  <h2 class="section-title">Let's build something.</h2>
-  <p class="contact-sub">Open to internships, junior developer roles, and freelance front-end work.</p>
-  <div class="contact-grid">
-    <a href="mailto:iaashishkumar04@gmail.com" class="contact-item">
-      <span class="fact-label">Email</span>
-      <span class="fact-value">iaashishkumar04@gmail.com</span>
-    </a>
-    <a href="tel:+919205588640" class="contact-item">
-      <span class="fact-label">Phone</span>
-      <span class="fact-value">+91-9205588640</span>
-    </a>
-    <a href="https://github.com/iaashishk" target="_blank" rel="noopener" class="contact-item">
-      <span class="fact-label">GitHub</span>
-      <span class="fact-value">github.com/iaashishk</span>
-    </a>
-    <a href="https://www.linkedin.com/in/aashish-k-b53778261/" target="_blank" rel="noopener" class="contact-item">
-      <span class="fact-label">LinkedIn</span>
-      <span class="fact-value">linkedin.com/in/aashish-k-b53778261</span>
+  <div class="contact-statement-block scroll-reveal">
+    <p class="statement-prompt">HAVE A ROLE OR PROJECT IN MIND?</p>
+    <a href="mailto:iaashishkumar04@gmail.com" class="big-statement-email" aria-label="Send email to Aashish Kumar">
+      <span class="cyber-shimmer">iaashishkumar04@gmail.com</span>
+      <span class="travel-arrow" aria-hidden="true">
+        <span class="travel-arrow-glyph">↗</span>
+        <span class="travel-arrow-glyph">↗</span>
+      </span>
     </a>
   </div>
-  <div class="contact-cta" style="display: flex; gap: 16px; flex-wrap: wrap;">
-    <a href="mailto:iaashishkumar04@gmail.com" class="btn btn-primary">Email me</a>
-    <a href="documents/resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+
+  <div class="contact-cta-bar scroll-reveal">
+    <a href="mailto:iaashishkumar04@gmail.com" class="btn btn-primary">
+      <span>Send an Email</span>
+      <span class="travel-arrow" aria-hidden="true">
+        <span class="travel-arrow-glyph">↗</span>
+        <span class="travel-arrow-glyph">↗</span>
+      </span>
+    </a>
+    <a href="documents/resume.pdf" class="btn btn-ghost" download>
+      <span>Download Resume</span>
+      <span class="travel-arrow" aria-hidden="true">
+        <span class="travel-arrow-glyph">↓</span>
+        <span class="travel-arrow-glyph">↓</span>
+      </span>
+    </a>
   </div>
 </section>
 
 <footer class="footer">
-  <span>© 2026 Aashish Kumar</span>
-  <a href="#home" class="back-to-top">Back to top ↑</a>
+  <div class="footer-inner">
+    <span>&copy; 2026 Aashish Kumar</span>
+    <a href="#home" class="footer-top-link">
+      <span>Back to top</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </a>
+  </div>
 </footer>
 
-<div id="popup" class="popup-modal">
-  <div class="popup-content">
-    <p>Thank you for submitting a recommendation!</p>
-    <button id="popupClose">Close</button>
+<div id="certLightbox" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Certificate Image Preview">
+  <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+  <div class="lightbox-container">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+    <div class="lightbox-image-wrapper">
+      <img src="" alt="" id="lightboxImg">
+    </div>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
   </div>
 </div>
+
+<button id="backToTop" class="back-to-top-btn" aria-label="Scroll back to top" aria-hidden="true">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <script src="js/script.js"></script>
 </body>
