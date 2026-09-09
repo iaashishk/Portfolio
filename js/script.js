@@ -8,7 +8,23 @@ const profileImg = document.getElementById('profileImg');
 const avatarFallback = document.getElementById('avatarFallback');
 const roleRotator = document.getElementById('roleRotator');
 
-const savedTheme = localStorage.getItem('ak_portfolio_theme') || 'cyber';
+function getStoredValue(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (error) {
+    return null;
+  }
+}
+
+function setStoredValue(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (error) {
+    // Storage can be unavailable when the page is opened with strict privacy settings.
+  }
+}
+
+const savedTheme = getStoredValue('ak_portfolio_theme') || 'cyber';
 document.documentElement.setAttribute('data-theme', savedTheme);
 
 const themeBtns = document.querySelectorAll('.theme-btn');
@@ -22,7 +38,7 @@ themeBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     const selected = btn.getAttribute('data-theme');
     document.documentElement.setAttribute('data-theme', selected);
-    localStorage.setItem('ak_portfolio_theme', selected);
+    setStoredValue('ak_portfolio_theme', selected);
     themeBtns.forEach((b) => b.classList.remove('active'));
     btn.classList.add('active');
     showToast(`Theme changed to ${btn.getAttribute('title')}`);
@@ -255,14 +271,21 @@ function initSpotlight() {
 }
 
 function initScrollReveal() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.scroll-reveal').forEach((el) => el.classList.add('in-view'));
+  const revealTargets = document.querySelectorAll(
+    '.scroll-reveal, .project-card, .timeline-item, .cert-card, .skill-group, .stat-card, .about-bio, .terminal-window, .contact-card, .contact-form-wrap'
+  );
+
+  if (!('IntersectionObserver' in window)) {
+    revealTargets.forEach((target) => target.classList.add('in-view'));
     return;
   }
 
-  const targets = document.querySelectorAll(
-    '.scroll-reveal, .project-card, .timeline-item, .cert-card, .skill-group, .stat-card, .about-bio, .terminal-window, .contact-card, .contact-form-wrap'
-  );
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealTargets.forEach((el) => el.classList.add('in-view'));
+    return;
+  }
+
+  const targets = revealTargets;
 
   targets.forEach((target) => {
     if (!target.classList.contains('scroll-reveal')) {
@@ -623,7 +646,7 @@ function getInitials(name) {
 }
 
 function loadRecommendations() {
-  const saved = localStorage.getItem('ak_portfolio_recommendations');
+  const saved = getStoredValue('ak_portfolio_recommendations');
   let list = defaultRecommendations;
   if (saved) {
     try {
@@ -769,7 +792,7 @@ if (recommendationForm) {
       return;
     }
 
-    const saved = localStorage.getItem('ak_portfolio_recommendations');
+    const saved = getStoredValue('ak_portfolio_recommendations');
     let list = defaultRecommendations;
     if (saved) {
       try {
@@ -787,7 +810,7 @@ if (recommendationForm) {
       role: role || 'Peer / Collaborator'
     });
 
-    localStorage.setItem('ak_portfolio_recommendations', JSON.stringify(list));
+    setStoredValue('ak_portfolio_recommendations', JSON.stringify(list));
     loadRecommendations();
 
     if (recTextInput) recTextInput.value = '';
