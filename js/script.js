@@ -442,27 +442,34 @@ function initTerminal() {
     ],
     skills: () => [
       'Languages:     C++, Python, Java, C#, SQL, JavaScript (ES6+)',
-      'Frontend:      React.js, Tailwind CSS, Bootstrap 5, HTML5, CSS3',
-      'Backend & DB:  Node.js, Express.js, MongoDB, MySQL, REST APIs',
-      'AI & Big Data: Machine Learning, Hadoop, MapReduce, HDFS, YARN',
-      'Workflow:      Git, GitHub, VS Code, Linux CLI, npm'
+      'Frontend:      React.js, Tailwind CSS, Bootstrap, HTML5, CSS3, Flexbox, Responsive Design',
+      'Backend & DB:  Node.js, Express.js, MongoDB, MySQL, PostgreSQL, .NET, RESTful APIs',
+      'Data & AI:     NumPy, Pandas, Matplotlib, Artificial Intelligence & Machine Learning',
+      'Fundamentals:  Data Structures & Algorithms, OOP, DBMS, OS, Networks, Software Engineering',
+      'Workflow:      Git, GitHub, VS Code, Linux, npm, MS Excel (Advanced)'
     ],
     projects: () => [
-      '1. Food-Lover: Modern restaurant landing platform with live timer',
-      '2. E-Commerce: Full store flow with dynamic cart and checkout',
-      '3. Weather App: Live API meteorological forecasting app',
-      '4. Expense Tracker: Local finance logging tool using localStorage',
-      '5. ShriJi Agro: Responsive multi-page commercial portal'
+      '1. Food-Lover: Restaurant landing platform with live promotional countdown timer',
+      '2. Ledger: React finance dashboard with Vite, React Router, Zod & ApexCharts',
+      '3. CineFind: React movie discovery app powered by TMDB API with favorites system',
+      '4. Waypoint: Modern split-screen authentication login page UI concept',
+      '5. ShriJi Agro: Commercial responsive multi-page business portal delivered end-to-end',
+      '6. E-Commerce Storefront: End-to-end shopping flow with cart & checkout validation',
+      '7. Weather App: Live forecast querying public REST APIs with resilient async handling',
+      '8. Expense Tracker: Client-side expense logging & analytics with localStorage'
     ],
     experience: () => [
-      'Frontend Developer Intern @ Webority Technologies (Aug 2026 - Present)',
-      '  - Building responsive interfaces & client web solutions',
+      'Frontend Developer Intern @ Webority Technologies (Aug 2026 - Sep 2026)',
+      '  - Build & maintain responsive web interfaces for real client projects',
+      '  - Implement UI features & collaborate to ensure cross-browser consistency',
+      '  - Built self-directed React projects (dashboard, movie app, login UI)',
       'Frontend Developer Intern @ ShriJi Agro Products (Jun 2025 - Jul 2025)',
-      '  - Delivered end-to-end commercial website & interactive UI'
+      '  - Delivered full, responsive commercial company website end-to-end',
+      '  - Built mobile-friendly flexbox layouts & interactive JavaScript elements'
     ],
     education: () => [
-      'M.C.A. (AI & ML) - Amity University Online (2026 - Present)',
-      'B.C.A. (CGPA: 8.31/10) - J.C. Bose UST, YMCA (2023 - 2026)'
+      'M.C.A. (AI & ML) - Amity University Online (2026 - Present) [Pursuing Scholar]',
+      'B.C.A. - J.C. Bose UST, YMCA (2023 - 2026) [Graduated with Distinction | CGPA: 8.31 / 10]'
     ],
     contact: () => [
       'Email:    iaashishkumar04@gmail.com',
@@ -471,8 +478,9 @@ function initTerminal() {
       'LinkedIn: https://linkedin.com/in/aashish-k-b53778261'
     ],
     whoami: () => [
-      'Aashish Kumar — MCA Scholar in AI & ML, Software Engineer & Frontend Developer Intern.',
-      'Passionate about crafting 3D interfaces and architecting scalable web applications.'
+      'Aashish Kumar — BCA Graduate (CGPA 8.31/10) pursuing MCA in AI & ML.',
+      'Frontend Developer Intern with real client & commercial web delivery experience.',
+      'Expanding into full-stack engineering with React, Node.js, Express, and MongoDB.'
     ],
     sudo: () => [
       'Permission denied: Guest user is already granted maximum interactive capabilities!'
@@ -497,6 +505,7 @@ function initTerminal() {
           <button class="cmd-chip" data-cmd="skills">skills</button>
           <button class="cmd-chip" data-cmd="projects">projects</button>
           <button class="cmd-chip" data-cmd="experience">experience</button>
+          <button class="cmd-chip" data-cmd="education">education</button>
           <button class="cmd-chip" data-cmd="contact">contact</button>
           <button class="cmd-chip" data-cmd="clear">clear</button>
         </div>

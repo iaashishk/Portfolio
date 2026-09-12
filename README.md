@@ -16,62 +16,39 @@ I am a Computer Applications graduate (BCA, CGPA 8.31/10) currently pursuing an 
 * **Frontend:** HTML5, CSS3, JavaScript (ES6+), React.js, Bootstrap, Tailwind CSS, CSS Flexbox, DOM Manipulation, Responsive Web Design
 
 
-* **Backend & Databases:** Node.js, Express.js, MongoDB, MySQL
+* **Backend & Databases:** Node.js, Express.js, MongoDB, MySQL, PostgreSQL, .NET
 
+* **Data Analysis & Visualization:** NumPy, Pandas, Matplotlib
 
 * **CS Fundamentals:** Data Structures & Algorithms, OOP, DBMS, Operating Systems, Computer Networks, Software Engineering
 
-
 * **Tools:** Git, GitHub, VS Code, npm, Linux, MS Excel (Advanced)
 
-
+* **Currently Exploring:** Artificial Intelligence & Machine Learning
 
 ## 💼 Professional Experience
 
-* **Frontend Developer Intern, Webority Technologies (Aug 2026-Present):**
-* Build and maintain responsive web interfaces for real client projects, applying HTML, CSS, and JavaScript best practices.
+* **Frontend Developer Intern, Webority Technologies (Aug 2026 – Sep 2026):**
+  * Build and maintain responsive web interfaces for real client projects, applying HTML, CSS, and JavaScript best practices.
+  * Collaborate with the development team to implement UI features and ensure consistent, cross-browser experiences.
+  * Built self-directed React projects (dashboard, movie app, login UI) to deepen full-stack skills — see Projects.
 
-
-* Collaborate with the development team to implement UI features and ensure consistent, cross-browser experiences.
-
-
-
-
-* **Frontend Developer Intern, ShriJi Agro Products Pvt. Ltd. (Jun 2025-Jul 2025):**
-* Delivered a full, responsive company website end-to-end, showcasing products, services, and company details to prospective customers.
-
-
-* Built clean, mobile-friendly page layouts with HTML, CSS, and CSS Flexbox, ensuring consistent display across screen sizes.
-
-
-* Implemented interactive page elements with JavaScript to improve usability and user engagement.
-
-
-* Collaborated with a fellow developer and a mentor to plan features, review code, and meet project deadlines.
-
-
-
-
+* **Frontend Developer Intern, ShriJi Agro Products Pvt. Ltd. (Jun 2025 – Jul 2025):**
+  * Delivered a full, responsive company website end-to-end, showcasing products, services, and company details to prospective customers.
+  * Built clean, mobile-friendly page layouts with HTML, CSS, and CSS Flexbox, ensuring consistent display across screen sizes.
+  * Implemented interactive page elements with JavaScript to improve usability and user engagement.
+  * Collaborated with a fellow developer and a mentor to plan features, review code, and meet project deadlines.
 
 ## 📁 Projects
 
-* **Food-Lover (Restaurant Landing Page):** Built a responsive restaurant and food ordering landing page with HTML5, Bootstrap 5, and vanilla JavaScript, including dark mode, mobile navigation, and scroll-triggered animations. Implemented a live countdown timer for promotional offers to drive urgency and engagement.
-
-
-* **E-Commerce Website:** Built a fully functional e-commerce frontend with product listing, cart management, and checkout flow using HTML, CSS, and JavaScript. Implemented dynamic product filtering and real-time cart updates via DOM manipulation without any external frameworks.
-
-
-* **Weather App:** Developed a weather application that fetches live data from a public REST API and displays real-time temperature, humidity, and conditions for any searched city. Handled asynchronous API calls using the JavaScript Fetch API, with error handling for invalid inputs and network failures.
-
-
-* **Expense Tracker:** Built a personal finance tracker with add/delete transaction features, live balance calculation, and income/expense categorization using vanilla JavaScript. Used localStorage to persist data across browser sessions, retaining user data without a backend.
-
-
+* **Food-Lover (Restaurant Landing Page):** Built a responsive restaurant/food landing page with HTML5, Bootstrap 5, and vanilla JavaScript, including dark mode, mobile navigation, and scroll-triggered animations. Implemented a live countdown timer for promotional offers to drive urgency and engagement.
+* **Ledger (React Finance Dashboard):** Built a responsive dashboard application with React, Vite, and React Router, featuring multi-page navigation and a reusable component architecture. Used React Hook Form with Zod for schema-based form validation and integrated ApexCharts for interactive visualizations.
+* **CineFind (Movie Discovery App):** Developed a React movie discovery app powered by the TMDB API, letting users browse trending titles and search by name. Implemented a favorites system to save and revisit selected movies directly in the browser, along with detailed movie view pages.
+* **Waypoint (Login Page UI Concept):** Designed a split-screen login page concept featuring custom-built form components and a clean, modern layout. Focused on reusable UI component structure and responsive design patterns for authentication screens.
 * **ShriJi Agro Product Website:** Built as a 2-person team project under the mentorship of Pankaj Arora, delivering a fully functional business website. Applied HTML, CSS, CSS Flexbox, and JavaScript to create a responsive, multi-page site showcasing products and services.
-
-
-* **Big Data Virtualization Setup:** Configured and optimized a Cloudera QuickStart VM for data warehousing concepts and MapReduce workflows.
-* **Console-Based Calculator:** A purely user-input-driven calculator that processes complex mathematical operations without relying on a graphical keypad interface.
+* **E-Commerce Website:** Built a fully functional e-commerce storefront with product listing, cart management, subtotal calculation, and checkout validation using HTML, CSS, and vanilla JavaScript.
+* **Weather App:** Developed a meteorological forecasting app querying public REST APIs with asynchronous fetch promises and resilient error handling for invalid locations and network outages.
+* **Expense Tracker:** Built a client-side finance manager supporting real-time transaction logging, dynamic net balance computation, categorized expenditure filtering, and data persistence with localStorage.
 
 ## 🎓 Education
 
